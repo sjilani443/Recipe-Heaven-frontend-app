@@ -48,12 +48,12 @@ const Card = ({item}) =>{
     <div className='container mx-auto flex justify-center'>
       <div className='mx-w'>
         <div className='bg-white relative shadow-lg hover:shadow-xl transition duration-500'>
+        <Link to={`/items/${item._id}`}>
             <img src={item?.thumbnail_image} alt="thumbnail_image" className='rounded-t-lg'/>
             <div className='py-6 px-5 rounded-t-lg'>
-            <Link to={`/items/${item._id}`}>
+            
             <h1 className='text-gray-700 font-bold text-2xl mb-8 hover:text-gray-900 hover:cursor-pointer'>{item?.name}</h1>
-                </Link>
-
+                
                 {/* Category and reading time */}
                 <div className='flex justify-between items-center flex-wrap'>
                     <button className='mt-6 py-2 px-4 font-medium rounded-lg shadow-md hover:shadow-lg transition duration-300' style={
@@ -71,6 +71,7 @@ const Card = ({item}) =>{
             <div className='absolute top-1 right-2 py-2 px-4 bg-white rounded-lg'>
                 <span className='font-medium'>{item?.more[0].difficulty}</span>
             </div>
+            </Link>
         </div>
          
       </div>
